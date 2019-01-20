@@ -72,7 +72,9 @@ scream test
 > py36-company_project: commands succeeded
 > congratulations
 
-
+# Save and push changes
+git commit -am "linked"
+git push --set-upstream origin link-packages
 
 ```
 ### Link to all packages [documentation](docs.md)
