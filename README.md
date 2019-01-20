@@ -105,7 +105,7 @@ git push
 
 ## Installing your package
 
-### `pip install` a single package with dependencies
+#### `pip install` a single package with dependencies
 
 At this point we can `pip install` a package from anywhere.
 
@@ -117,7 +117,7 @@ pip install 'git+ssh://git@github.com/r-kells/scream-example.git@master#subdirec
 > Successfully installed company-project-0.0.1
 ```
 
-### `scream install`
+#### `scream install`
 
 If you are using CD/CI, you'll probably clone your monorepo into an environment for testing / deploying.
 Using `scream install`, local dependencies are resolved automatically without needing `dependency_links`.
