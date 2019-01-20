@@ -30,10 +30,51 @@ pyenv local 3.6.7
 scream test --all
 
 # Commit our initial project structure.
+git add .
+git commit -m "initial monorepo setup"
+
+# Your repo here... 
+git remote add origin git@github.com:r-kells/scream-example.git
+git push -u origin master
+
+# Start working on a new feature.
+git checkout -b link-packages
+```
+
+Add the following to `project/setup.cfg` `[options]`
+
+This will make the package `project` depend on the package `common`.
+While we are add it, add `flask` as a dependecy.
+
+`dependency_links` is not manditory, but if you want to install `company_project` package
+directly using pip you will need to add it. 
+
+```ini
+install_requires = 
+    company_common 
+    flask
+
+dependency_links =
+    git+ssh://git@github.com/r-kells/scream_example.git@master#egg=company_common-0#subdirectory=common
+```
+
+```bash
+# Run scream test to make sure we didnt break anything
+scream test
+> INFO - The following packages have changes compared since branch: `link-packages`:
+        company_project
+
+> INFO - Packages that require testing:
+        company_project
+...
+...
+...
+> py36-company_project: commands succeeded
+> congratulations
+
 
 
 ```
-
 ### Link to all packages [documentation](docs.md)
 
 ---
