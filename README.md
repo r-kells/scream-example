@@ -10,7 +10,7 @@ Here are the commands to reproduce this repo.
 
 ## Setup
 
-`scream init` sets up an empty repository with all the basic files you need for you python monorepo.
+`scream init` sets up an empty repository with all the basic files you need for your python monorepo.
 
 ```bash
 mkdir monorepo
